@@ -112,7 +112,20 @@ cards.forEach(card => {
   })
 })
 
-// WORKS for one input area
+const forms = document.querySelectorAll('[data-js="formInput"')
+
+forms.forEach(formInput => {
+  const textarea = formInput.querySelector('[data-js="textarea"]')
+  const counter = formInput.querySelector('[data-js="counter"]')
+
+  textarea.addEventListener('input', () => {
+    const textLength = textarea.value.length
+    counter.innerHTML =
+      textarea.maxLength - textLength + '/' + textarea.maxLength
+  })
+})
+
+/* WORKS for one input area
 const textarea = document.querySelector('[data-js="formInput"]')
 const counter = document.querySelector('[data-js="counter"]')
 
@@ -122,33 +135,8 @@ textarea.addEventListener('input', () => {
   console.log(counter.textContent)
 })
 
-/* MAKE IT WORK FOR MANY
-forms.forEach(form => {
-  const textarea = form.querySelector('[data-js="formInput"]')
-  const counter = form.querySelector('[data-js="counter"]')
 
-  textarea.addEventListener('input', () => {
-    const textLength = textarea.value.length
-    counter.textContent = textarea.maxLength - textLength + '/100'
-    console.log(counter.textContent)
-  })
-})
-
-/* MAKE IT WORK FOR MANY
-const textareas = document.querySelector('[data-js="formInput"]')
-
-textareas.forEach(area => {
-  const counter = area.querySelector('[data-js="counter"]')
-
-  textarea.addEventListener('input', () => {
-    const textLength = textarea.value.length
-    counter.textContent = textarea.maxLength - textLength + '/100'
-    console.log(counter.textContent)
-  })
-})
-*/
-
-/*
+/* ANOTHER WAY WITH IF
 const formInput = getElement('formInput')
 
 formInput.addEventListener('input', event => {
