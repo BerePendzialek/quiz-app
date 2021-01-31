@@ -170,12 +170,16 @@
               >Add question:</label
             >
             <textarea
+              maxlength="100"
               name="question"
               class="form__text-input"
               rows="5"
               cols="80"
               placeholder="..."
+              data-js="formInput"
             ></textarea>
+            <span data-js="counter">100</span>
+
             <label class="form__label mb-10 mt-20" for="addanswer"
               >Add answer:</label
             >
@@ -185,7 +189,10 @@
               rows="3"
               cols="80"
               placeholder="..."
+              data-js="formInput"
             ></textarea>
+            <span data-js="counter">100</span>
+
             <label class="form__label mb-10 mt-20" for="addtags"
               >Add tags:</label
             >
@@ -195,7 +202,9 @@
               rows="1"
               cols="80"
               placeholder="..."
+              data-js="formInput"
             ></textarea>
+            <span data-js="counter">100</span>
           </fieldset>
 
           <button type="button" class="buttons button-single">Submit</button>

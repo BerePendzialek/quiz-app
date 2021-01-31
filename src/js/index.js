@@ -111,3 +111,56 @@ cards.forEach(card => {
     answer.classList.toggle('hidden')
   })
 })
+
+// WORKS for one input area
+const textarea = document.querySelector('[data-js="formInput"]')
+const counter = document.querySelector('[data-js="counter"]')
+
+textarea.addEventListener('input', () => {
+  const textLength = textarea.value.length
+  counter.textContent = textarea.maxLength - textLength + '/100'
+  console.log(counter.textContent)
+})
+
+/* MAKE IT WORK FOR MANY
+forms.forEach(form => {
+  const textarea = form.querySelector('[data-js="formInput"]')
+  const counter = form.querySelector('[data-js="counter"]')
+
+  textarea.addEventListener('input', () => {
+    const textLength = textarea.value.length
+    counter.textContent = textarea.maxLength - textLength + '/100'
+    console.log(counter.textContent)
+  })
+})
+
+/* MAKE IT WORK FOR MANY
+const textareas = document.querySelector('[data-js="formInput"]')
+
+textareas.forEach(area => {
+  const counter = area.querySelector('[data-js="counter"]')
+
+  textarea.addEventListener('input', () => {
+    const textLength = textarea.value.length
+    counter.textContent = textarea.maxLength - textLength + '/100'
+    console.log(counter.textContent)
+  })
+})
+*/
+
+/*
+const formInput = getElement('formInput')
+
+formInput.addEventListener('input', event => {
+const target = event.currentTarget;
+const maxLength = target.getAttribute('maxlenght');
+const currentLength = target.value.length;
+
+if (currentLength >= maxLength) {
+  return console.log ("max reached");
+}
+
+console.log(`${maxLength - currentLength + " chars left"});
+})
+})
+*/
